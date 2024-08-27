@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 import PageCardGrid from "../components/home/PageCard";
+import bg from "../assets/bg/1.jpg"; // Importing the background image
 
 function Home() {
   const [loading, setLoading] = useState(true);
@@ -63,8 +64,12 @@ function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 flex items-center justify-center bg-black overflow-hidden"
+          className="fixed inset-0 flex items-center justify-center bg-lightcoral overflow-hidden"
         >
+          <div
+            className="absolute inset-0 bg-cover bg-center opacity-15"
+            style={{ backgroundImage: `url(${bg})` }}
+          ></div>
           <div className="relative z-10 text-center px-4">
             <motion.h2
               initial={{ scale: 0.5, opacity: 0 }}
@@ -75,7 +80,7 @@ function Home() {
                 ease: "easeInOut",
                 delay: 1,
               }}
-              className="text-2xl sm:text-3xl md:text-4xl text-red-400 font-semibold uppercase tracking-wider font-display mb-2"
+              className="text-2xl sm:text-3xl md:text-4xl text-rose-400 font-semibold uppercase tracking-wider font-display mb-2"
             >
               Samskara
             </motion.h2>
@@ -88,7 +93,7 @@ function Home() {
                 ease: "easeInOut",
                 delay: 2,
               }}
-              className="text-4xl sm:text-5xl md:text-6xl text-red-500 font-bold uppercase tracking-widest font-display"
+              className="text-4xl sm:text-5xl md:text-6xl text-rose-500 font-bold uppercase tracking-widest font-display"
             >
               Aaravam '24
             </motion.h1>
@@ -96,7 +101,7 @@ function Home() {
               initial={{ width: 0 }}
               animate={{ width: "100%" }}
               transition={{ duration: 3, delay: 4, ease: "easeInOut" }}
-              className="h-1 bg-red-500 mt-4"
+              className="h-1 bg-rose-500 mt-4"
             />
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -114,30 +119,37 @@ function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="min-h-screen bg-black text-white p-4 sm:p-6"
+          className="min-h-screen bg-lightcoral text-gray-800 p-4 sm:p-6 relative"
         >
-          <header className="mb-8 flex justify-center flex-col items-center mt-8 sm:mt-12">
-            <h2 className="text-2xl sm:text-3xl font-semibold text-red-400 font-display">
+          {/* Background Image with Opacity */}
+          <div
+            className="absolute inset-0 bg-cover bg-center opacity-15"
+            style={{ backgroundImage: `url(${bg})` }}
+          ></div>
+
+          {/* Content */}
+          <header className="mb-8 flex justify-center flex-col items-center mt-8 sm:mt-12 relative z-10">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-rose-400 font-display">
               Samskara
             </h2>
-            <h1 className="text-4xl sm:text-5xl font-bold text-red-500 font-display mt-2">
+            <h1 className="text-4xl sm:text-5xl font-bold text-rose-500 font-display mt-2">
               Aaravam '24
             </h1>
           </header>
-          <main className="flex flex-col justify-center items-center text-white">
+          <main className="flex flex-col justify-center items-center text-gray-800 relative z-10">
             <motion.section
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               className="w-full max-w-6xl mx-auto"
             >
-              <h2 className="text-3xl font-bold text-center mb-8 text-white">
+              <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
                 Our featured events
               </h2>
               <PageCardGrid events={sampleEvents} />
             </motion.section>
           </main>
-          <footer className="mt-8 sm:mt-12 text-center text-gray-500 font-body">
+          <footer className="mt-8 sm:mt-12 text-center text-gray-600 font-body relative z-10">
             <p>&copy; 2024 Samskara Aaravam. All rights reserved.</p>
             <div className="mt-4 flex justify-center space-x-6">
               <a

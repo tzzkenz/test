@@ -7,7 +7,9 @@ export default {
         display: ["Montserrat", "serif"],
         body: ["Roboto", "sans-serif"],
       },
-      colors: {},
+      colors: {
+        lightcoral: "#Fdf7c4",
+      },
     },
   },
   plugins: [],
