@@ -2,8 +2,6 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 import PageCardGrid from "../components/home/PageCard";
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
 
 function Home() {
   const [loading, setLoading] = useState(true);
@@ -15,14 +13,6 @@ function Home() {
 
     return () => clearTimeout(timer);
   }, []);
-
-  const particlesInit = async (main) => {
-    await loadFull(main);
-  };
-
-  const particlesLoaded = (container) => {
-    // Handle loaded particles
-  };
 
   const sampleEvents = [
     {
@@ -67,16 +57,6 @@ function Home() {
 
   return (
     <AnimatePresence>
-      <Particles
-        id="tsparticles"
-        init={particlesInit}
-        loaded={particlesLoaded}
-        options={
-          {
-            // Your particles configuration
-          }
-        }
-      />
       {loading ? (
         <motion.div
           key="loader"
