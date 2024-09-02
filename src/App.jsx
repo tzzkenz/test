@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import Home from "./pages/home";
+import Home from "./pages/Home";
 import TVM from "./pages/TVM";
 import Map from "./pages/Map";
 import PlaceDetail from "./components/TVM/PlaceDetail";
