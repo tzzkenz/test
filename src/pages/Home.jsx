@@ -111,10 +111,10 @@ function Home() {
           ></div>
 
           <header className="mb-8 flex justify-center flex-col items-center mt-8 sm:mt-12 relative z-10">
-            <h2 className="text-2xl sm:text-3xl font-semibold text-rose-400 font-display">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-white font-display">
               Samskara
             </h2>
-            <h1 className="text-4xl sm:text-5xl font-bold text-rose-500 font-display mt-2">
+            <h1 className="text-4xl sm:text-5xl font-bold text-white font-display mt-2">
               Aaravam '24
             </h1>
           </header>
