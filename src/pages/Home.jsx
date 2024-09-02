@@ -78,7 +78,7 @@ function Home() {
                 times: [0, 0.7, 1],
                 ease: "easeInOut",
               }}
-              className="text-2xl sm:text-3xl md:text-4xl text-rose-400 font-semibold uppercase tracking-wider font-display mb-2"
+              className="text-2xl sm:text-3xl md:text-4xl text-white font-semibold uppercase tracking-wider font-display mb-2"
             >
               Samskara
             </motion.h2>
@@ -91,7 +91,7 @@ function Home() {
                 ease: "easeInOut",
                 delay: 0.5,
               }}
-              className="text-4xl sm:text-5xl md:text-6xl text-rose-500 font-bold uppercase tracking-widest font-display"
+              className="text-4xl sm:text-5xl md:text-6xl text-white font-bold uppercase tracking-widest font-display"
             >
               Aaravam '24
             </motion.h1>
