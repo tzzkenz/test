@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 import PageCardGrid from "../components/home/PageCard";
-import bg from "../assets/bg/1.jpg"; // Importing the background image
+import bg from "../assets/bg/1.jpg";
 
 function Home() {
   const [loading, setLoading] = useState(true);
@@ -10,8 +10,7 @@ function Home() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 7000);
-
+    }, 3000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -64,7 +63,7 @@ function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 flex items-center justify-center bg-lightcoral overflow-hidden"
+          className="fixed inset-0 flex items-center justify-center bg-gray-900 overflow-hidden"
         >
           <div
             className="absolute inset-0 bg-cover bg-center opacity-15"
@@ -75,10 +74,9 @@ function Home() {
               initial={{ scale: 0.5, opacity: 0 }}
               animate={{ scale: [0.5, 1, 0.9], opacity: 1 }}
               transition={{
-                duration: 2,
+                duration: 1.5,
                 times: [0, 0.7, 1],
                 ease: "easeInOut",
-                delay: 1,
               }}
               className="text-2xl sm:text-3xl md:text-4xl text-rose-400 font-semibold uppercase tracking-wider font-display mb-2"
             >
@@ -88,29 +86,15 @@ function Home() {
               initial={{ scale: 0.5, opacity: 0 }}
               animate={{ scale: [0.5, 1.2, 1], opacity: 1 }}
               transition={{
-                duration: 2.5,
+                duration: 2,
                 times: [0, 0.7, 1],
                 ease: "easeInOut",
-                delay: 2,
+                delay: 0.5,
               }}
               className="text-4xl sm:text-5xl md:text-6xl text-rose-500 font-bold uppercase tracking-widest font-display"
             >
               Aaravam '24
             </motion.h1>
-            <motion.div
-              initial={{ width: 0 }}
-              animate={{ width: "100%" }}
-              transition={{ duration: 3, delay: 4, ease: "easeInOut" }}
-              className="h-1 bg-rose-500 mt-4"
-            />
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 5 }}
-              className="text-white text-lg sm:text-xl mt-4 font-body"
-            >
-              Prepare for an unforgettable experience...
-            </motion.p>
           </div>
         </motion.div>
       ) : (
@@ -119,15 +103,13 @@ function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="min-h-screen bg-lightcoral text-gray-800 p-4 sm:p-6 relative"
+          className="min-h-screen bg-gray-900 text-white p-4 sm:p-6 relative"
         >
-          {/* Background Image with Opacity */}
           <div
             className="absolute inset-0 bg-cover bg-center opacity-15"
             style={{ backgroundImage: `url(${bg})` }}
           ></div>
 
-          {/* Content */}
           <header className="mb-8 flex justify-center flex-col items-center mt-8 sm:mt-12 relative z-10">
             <h2 className="text-2xl sm:text-3xl font-semibold text-rose-400 font-display">
               Samskara
@@ -136,20 +118,20 @@ function Home() {
               Aaravam '24
             </h1>
           </header>
-          <main className="flex flex-col justify-center items-center text-gray-800 relative z-10">
+          <main className="flex flex-col justify-center items-center text-white relative z-10">
             <motion.section
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               className="w-full max-w-6xl mx-auto"
             >
-              <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
+              <h2 className="text-3xl font-bold text-center mb-8 text-white">
                 Our featured events
               </h2>
               <PageCardGrid events={sampleEvents} />
             </motion.section>
           </main>
-          <footer className="mt-8 sm:mt-12 text-center text-gray-600 font-body relative z-10">
+          <footer className="mt-8 sm:mt-12 text-center text-gray-400 font-body relative z-10">
             <p>&copy; 2024 Samskara Aaravam. All rights reserved.</p>
             <div className="mt-4 flex justify-center space-x-6">
               <a
@@ -175,4 +157,5 @@ function Home() {
     </AnimatePresence>
   );
 }
+
 export default Home;
